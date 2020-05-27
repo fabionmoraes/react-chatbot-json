@@ -165,7 +165,7 @@ export default function Index() {
       setLoading(true);
       setTimeout(chatbot, json.time);
     }
-  }, [page]);
+  }, [page]); // eslint-disable-line
 
   return (
     <>
@@ -175,7 +175,7 @@ export default function Index() {
     <Conteudo>
       <Scrollbars autoHide className="scrollbar" style={{ height: '100%' }}>
         {messegers.map(item => (
-          <Messenger reverse={item.reverse}>
+          <Messenger key={item.mensagem} reverse={item.reverse}>
             <div>
               <img src={item.reverse ? semavatar : logo} alt={json.name} />
               <Text
@@ -186,28 +186,26 @@ export default function Index() {
                 <p>{item.mensagem}</p>
 
                 {item.menu.length > 0 && (
-                  <>
+                  <ul>
                     {item.menu.map(elem => (
-                      <ul>
-                        <li>
-                          <button
-                            type="button"
-                            onClick={() => btnClick({
-                              text: elem.title,
-                              goClick: elem.goClick
-                            })}
-                          >
-                            {elem.icone && (
-                              <Icon style={{ fontSize: `${json.fontSize}` }}>
-                                {elem.icone}
-                              </Icon>
-                            )}
-                            {elem.title}
-                          </button>
-                        </li>
-                    </ul>
+                      <li key={item.title}>
+                        <button
+                          type="button"
+                          onClick={() => btnClick({
+                            text: elem.title,
+                            goClick: elem.goClick
+                          })}
+                        >
+                          {elem.icone && (
+                            <Icon style={{ fontSize: `${json.fontSize}` }}>
+                              {elem.icone}
+                            </Icon>
+                          )}
+                          {elem.title}
+                        </button>
+                      </li>
                     ))}
-                  </>
+                  </ul>
                 )}
               </Text>
             </div>

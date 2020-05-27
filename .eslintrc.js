@@ -14,10 +14,10 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: "module"
   },
-  plugins: ["react", "jsx-a11y", "import", "react-hooks", "prettier"],
+  plugins: ["react", "jsx-a11y", "import", "prettier"],
   rules: {
     "prettier/prettier": ["error", {
      "endOfLine":"auto"
@@ -36,8 +36,6 @@ module.exports = {
     "eqeqeq": "off",
     camelcase: "off",
     "no-console": ["error", { allow: ["tron"] }],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
   },
   settings: {
     "import/resolver": {
