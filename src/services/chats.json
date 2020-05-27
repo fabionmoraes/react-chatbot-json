@@ -1,0 +1,72 @@
+{
+  "header": "#003264",
+  "name": "fabiomoraes.dev",
+  "start": "Olá! Digite seu nome para começar o atendimento virtual.",
+  "time": 3000,
+  "user": {
+    "name": "",
+    "idade": "",
+    "telefone": ""
+  },
+  "fontSize": "14px",
+  "data": [
+    {
+      "etapa": "welcome",
+      "mensagem": "Seja Bem vindo",
+      "text": true,
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": "name",
+      "go": "telefone",
+      "menu": []
+    },
+    {
+      "etapa": "telefone",
+      "mensagem": "Qual o seu telefone?",
+      "text": false,
+      "permission": false,
+      "question": "errorNumber",
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": []
+    },
+    {
+      "etapa": "errorNumber",
+      "mensagem": "",
+      "text": false,
+      "permission": {
+        "tipo": "number",
+        "error": "Por favor! Preencha Novamente apenas com número o seu telefone."
+      },
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": "final",
+      "menu": []
+    },
+    {
+      "etapa": "final",
+      "mensagem": "Obrigado pelo nosso atendimento.",
+      "text": false,
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": [
+        {
+          "title": "Voltar Navegação",
+          "icone": "star",
+          "goClick": "telefone"
+        },
+        {
+          "title": "Menu Anterior",
+          "icone": "star",
+          "goClick": "telefone"
+        }
+      ]
+    }
+  ]
+}
