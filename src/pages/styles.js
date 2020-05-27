@@ -17,8 +17,6 @@ export const Conteudo = styled.div`
   height: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
   position: fixed;
   z-index: 6;
 `;
@@ -87,7 +85,7 @@ export const Text = styled.span`
         display: flex;
         flex-direction: row;
         align-items: center;
-        min-width: 300px;
+        min-width: 240px;
         flex: 1;
         border: none;
         border-radius: 4px;

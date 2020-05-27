@@ -172,7 +172,11 @@ export default function Index() {
       {json.name}
     </Header>
     <Conteudo>
-      <Scrollbars autoHide className="scrollbar" style={{ height: '100%' }}>
+      <Scrollbars
+        autoHide
+        className="scrollbar"
+        style={{ height: '100%', paddingLeft: 15, paddingRight: 15 }}
+      >
         {messegers.map(item => (
           <Messenger key={item.mensagem} reverse={item.reverse}>
             <div>
