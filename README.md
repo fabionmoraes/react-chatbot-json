@@ -1,6 +1,7 @@
 Chat Bot:
 
 demo: https://chatbot.fabiomoraes.dev/
+linkedin: https://www.linkedin.com/in/fabionmoraes/
 
 ## Available Scripts
 
