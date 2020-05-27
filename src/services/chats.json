@@ -47,14 +47,14 @@
       "mensagem": "Digite seu telefone.",
       "text": false,
       "permission": false,
-      "question": "errorNumber",
+      "question": "errorNumberPhone",
       "reverse": false,
-      "save": "telefone",
+      "save": false,
       "go": false,
       "menu": []
     },
     {
-      "etapa": "errorNumber",
+      "etapa": "errorNumberPhone",
       "mensagem": "",
       "text": false,
       "permission": {
@@ -63,7 +63,7 @@
       },
       "question": false,
       "reverse": false,
-      "save": false,
+      "save": "telefone",
       "go": "navegacao",
       "menu": []
     },
@@ -131,7 +131,7 @@
     {
       "etapa": "final",
       "mensagem": "Obrigado pelo nosso atendimento.",
-      "text": "all",
+      "text": false,
       "permission": false,
       "question": false,
       "reverse": false,
