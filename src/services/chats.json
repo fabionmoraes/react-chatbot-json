@@ -2,10 +2,9 @@
   "header": "#003264",
   "name": "fabiomoraes.dev",
   "start": "Olá! Digite seu nome para começar o atendimento virtual.",
-  "time": 3000,
+  "time": 2500,
   "user": {
     "name": "",
-    "idade": "",
     "telefone": ""
   },
   "fontSize": "14px",
@@ -23,12 +22,34 @@
     },
     {
       "etapa": "telefone",
-      "mensagem": "Qual o seu telefone?",
+      "mensagem": "Deseja registrar o seu telefone?",
+      "text": false,
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": [
+        {
+          "title": "SIM",
+          "icone": "check_circle",
+          "goClick": "telefoneSend"
+        },
+        {
+          "title": "NÃO",
+          "icone": "highlight_off",
+          "goClick": "navegacao"
+        }
+      ]
+    },
+    {
+      "etapa": "telefoneSend",
+      "mensagem": "Digite seu telefone.",
       "text": false,
       "permission": false,
       "question": "errorNumber",
       "reverse": false,
-      "save": false,
+      "save": "telefone",
       "go": false,
       "menu": []
     },
@@ -43,12 +64,12 @@
       "question": false,
       "reverse": false,
       "save": false,
-      "go": "final",
+      "go": "navegacao",
       "menu": []
     },
     {
-      "etapa": "final",
-      "mensagem": "Obrigado pelo nosso atendimento.",
+      "etapa": "navegacao",
+      "mensagem": "Escolha uma opção abaixo.",
       "text": false,
       "permission": false,
       "question": false,
@@ -57,14 +78,70 @@
       "go": false,
       "menu": [
         {
-          "title": "Voltar Navegação",
-          "icone": "star",
-          "goClick": "telefone"
+          "title": "Quem Somos",
+          "icone": false,
+          "goClick": "empresa"
         },
         {
-          "title": "Menu Anterior",
-          "icone": "star",
-          "goClick": "telefone"
+          "title": "Meu GIT",
+          "icone": false,
+          "goClick": "git"
+        },
+        {
+          "title": "Sair do atendimento",
+          "icone": false,
+          "goClick": "final"
+        }
+      ]
+    },
+    {
+      "etapa": "empresa",
+      "mensagem": "A Elabore Digital é uma Agência de Marketing Digital que projeta, cria e implementa soluções integradas de design, programação e web marketing, com total orientação para os resultados do seu negócio.",
+      "text": false,
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": [
+        {
+          "title": "Voltar o Menu",
+          "icone": false,
+          "goClick": "navegacao"
+        }
+      ]
+    },
+    {
+      "etapa": "git",
+      "mensagem": "Acesso o git do chat https://github.com/fabionmoraes/react-chatbot-json",
+      "text": false,
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": [
+        {
+          "title": "Voltar o Menu",
+          "icone": false,
+          "goClick": "navegacao"
+        }
+      ]
+    },
+    {
+      "etapa": "final",
+      "mensagem": "Obrigado pelo nosso atendimento.",
+      "text": "all",
+      "permission": false,
+      "question": false,
+      "reverse": false,
+      "save": false,
+      "go": false,
+      "menu": [
+        {
+          "title": "Voltar Navegação",
+          "icone": false,
+          "goClick": "navegacao"
         }
       ]
     }

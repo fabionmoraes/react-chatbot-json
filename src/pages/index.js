@@ -68,13 +68,12 @@ export default function Index() {
       const dados = {
         ...user,
         name: chats.save === 'name' ? chats.mensagem : user.name,
-        idade: chats.save === 'idade' ? chats.mensagem : user.idade,
         telefone: chats.save === 'telefone' ? chats.mensagem : user.telefone,
       };
       setUser(dados);
     }
 
-    if (chats.mensagem) {
+    if (chats.mensagem && chats.text !== 'all') {
       const mensagem =
             chats.text ?
               `${chats.mensagem} ${data.mensagem}.` : chats.mensagem;
@@ -184,6 +183,14 @@ export default function Index() {
                 color={json.header}
               >
                 <p>{item.mensagem}</p>
+
+                {item.text === 'all' && (
+                  <>
+                    <h4>Segue seus dados abaixo:</h4>
+                    <p><strong>Nome:</strong> {user.name}</p>
+                    <p><strong>Telefone:</strong> {user.telefone}</p>
+                  </>
+                )}
 
                 {item.menu.length > 0 && (
                   <ul>
