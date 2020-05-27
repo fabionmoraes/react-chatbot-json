@@ -1,5 +1,3 @@
-<img src="https://fabiomoraes.dev/images/chatbot-image.jpg" width="100%" alt="fabiomoraes />
-
 Chat Bot:
 
 demo: https://chatbot.fabiomoraes.dev/
