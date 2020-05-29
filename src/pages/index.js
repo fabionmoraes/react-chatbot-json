@@ -178,7 +178,7 @@ export default function Index() {
         style={{ height: '100%', paddingLeft: 15, paddingRight: 15 }}
       >
         {messegers.map(item => (
-          <Messenger key={item.mensagem} reverse={item.reverse}>
+          <Messenger key={item.etapa} reverse={item.reverse}>
             <div>
               <img src={item.reverse ? semavatar : logo} alt={json.name} />
               <Text
