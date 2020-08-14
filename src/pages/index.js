@@ -25,7 +25,7 @@ export default function Index() {
   const [loading, setLoading] = useState(true);
   const messagesEndRef = useRef(null);
 
-  const start = useCallback(() => {
+  function start() {
     const mensagem = json.start;
     const reverse = false;
     const menu = [];
@@ -38,9 +38,9 @@ export default function Index() {
 
     setLoading(false);
     setMessegers(convert);
-  }, []);
+  }
 
-  const chatbot = useCallback((data) => {
+  function chatbot(data) {
     const chats = page ? json.data.find(item => item.etapa === page) :
     json.data.find(item => item.etapa === etapa);
 
@@ -104,9 +104,9 @@ export default function Index() {
     }
 
     setLoading(false);
-  }, []);
+  }
 
-  const sendBtn = useCallback(data => {
+  const sendBtn = data => {
     const mensagem = data.text;
     const reverse = data.reverse;
     const menu = [];
@@ -125,9 +125,9 @@ export default function Index() {
     setTimeout(() => {
       chatbot(setDados);
     }, json.time);
-  }, []);
+  };
 
-  const btnClick = useCallback(data => {
+  const btnClick = data => {
     const mensagem = data.text;
     const reverse = true;
     const menu = [];
@@ -146,11 +146,11 @@ export default function Index() {
     setTimeout(() => {
       setPage(data.goClick);
     }, json.time);
-  }, []);
+  };
 
-  const scrollToBottom = useCallback(() => {
+  const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
-  }, []);
+  }
 
   useEffect(scrollToBottom, [messegers]);
 
