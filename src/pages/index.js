@@ -54,10 +54,7 @@ export default function Index() {
 
         const setDados = { mensagem, reverse, menu };
 
-        const convert = Object.values({ data, setDados });
-
-        const array = messegers.concat(convert);
-        setMessegers(array);
+        setMessegers(state => [...state, setDados]);
         setLoading(false);
 
         return;
@@ -82,11 +79,10 @@ export default function Index() {
 
       const setDados = { mensagem, reverse, menu };
 
-      const convert = page ? Object.values({ setDados }) :
-      Object.values({ data, setDados });
+      const convert = page ? setDados :
+      {...data, ...setDados};
 
-      const array = messegers.concat(convert);
-      setMessegers(array);
+      setMessegers(state => [...state, convert]);
 
       setLoading(false);
     }
@@ -114,12 +110,8 @@ export default function Index() {
     document.getElementById('form_reset').reset();
 
     const setDados = { mensagem, reverse, menu };
-    const object = { setDados };
-    const convert = Object.values(object); // Transforma objeto em array
 
-    const messengerGeral = messegers.concat(convert);
-
-    setMessegers(messengerGeral);
+    setMessegers(state => [...state, setDados]);
 
     setLoading(true);
     setTimeout(() => {
